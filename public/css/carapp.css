@@ -1,0 +1,135 @@
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.card-body.login-card-body {
+    width: 400px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+
+.slider-content {
+    height: 600px;
+    left: 35px;
+    width: 283px;
+    position: relative;
+    background-color: rgba(0, 123, 255, .5);
+    z-index: 1032;
+}
+
+.slider-content div.titulo {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+    left: 28px;
+}
+
+.slider {
+    height: 600px;
+    background-image: url('../img/slides-01.jpg');
+}
+
+.fixed-top {
+    position: initial !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.bg-dark {
+    background-color: #232a49 !important;
+}
+
+.menu {
+    border-bottom: 3px solid #69574d;
+}
+
+.flex-caption {
+    position: absolute;
+    right: -166px;
+    top: -117%;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    z-index: 9999;
+    animation: mymove 3s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes mymove {
+    from {
+        right: -230px;
+    }
+
+    to {
+        right: -180px;
+    }
+}
+
+.flex-caption h2 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 48px;
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.featured-slider .slides li {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.flexslider .slides>li {
+    display: none;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-backface-visibility: hidden;
+    position: relative;
+}
+
+.right {
+    text-align: right;
+}
+
+.inscricao {
+    color: #fff !important;
+    background-color: #17a2b8 !important;
+    padding: 10px;
+}
+
+.remove {
+    cursor: pointer;
+}
+
+.obrig {
+    color: red;
+    font-size: 11px;
+    padding-left: 5px;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+    font-weight: bold;
+}
