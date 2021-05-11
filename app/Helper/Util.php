@@ -39,7 +39,7 @@ class Util
 
     /**
      * Retornando Hash de String
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $string
      * @return string 
      */
@@ -182,7 +182,7 @@ class Util
 
     /**
      * Validando se telefone informado é um telefone fixo válido no formato correto
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $telefone Ex. (48) 3257-6468
      * @return boolean
      */
@@ -197,7 +197,7 @@ class Util
 
     /**
      * Validando se telefone informado é um telefone celular válido no formato correto
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $telefone Ex. (48) 98828-6468
      * @return boolean
      */
@@ -212,7 +212,7 @@ class Util
 
     /**
      * Validando se email informado esta no formato correto
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $email
      * @return boolean
      */
@@ -227,7 +227,7 @@ class Util
 
     /**
      * Transformar valor float para moeda formato Brasileiro
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param float $valor
      * @return string
      */
@@ -238,7 +238,7 @@ class Util
 
     /**
      * Retornando DataTime formato Brasileiro
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $dateTimeDB
      * @return string
      */
@@ -249,7 +249,7 @@ class Util
     }
 
     /**
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      */
     static function usuarioLogado($nomeUsuario)
     {
@@ -260,7 +260,7 @@ class Util
 
     /**
      * Realizando validação no Formato JSON passado pelo Request DataRaw
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $contentBodyRaw
      * @return Json
      */
@@ -300,7 +300,7 @@ class Util
 
     /**
      * Mascara para CNPJ ou CPF
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param string $cpf_cnpj
      * @return string
      */

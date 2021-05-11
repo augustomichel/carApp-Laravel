@@ -11,17 +11,20 @@ use App\Http\Requests\StoreUpdateUsuarioRequest;
 
 class UsuarioController extends Controller
 {
-    public function __construct(Request $request, Usuario $usuario)
+    protected $usuarioNivel;
+
+    public function __construct(Request $request, Usuario $usuario, UsuarioNivel $usuarioNivel)
     {
         $this->middleware('auth');
 
-        $this->request     = $request;
-        $this->repositorio = $usuario;
+        $this->request      = $request;
+        $this->repositorio  = $usuario;
+        $this->usuarioNivel = $usuarioNivel;
     }
 
     /**
      * Display a listing of the resource.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -76,15 +79,16 @@ class UsuarioController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        $id        = $this->request->session()->get('user-id');
+        $id      = $this->request->session()->get('user-id');
         $usuario = $this->repositorio->where(['usu_codigo' => $id])->first();
 
-        $niveisUsuario = UsuarioNivel::where(['usn_status' => 'S'])
+        $niveisUsuario = $this->usuarioNivel
+            ->where(['usn_status' => 'S'])
             ->where('usn_codigo', '>=', $usuario->usu_nivel)
             ->where('usn_codigo', '<>', Usuario::CONDUTOR)
             ->get();
@@ -97,7 +101,7 @@ class UsuarioController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  StoreUpdateUsuarioRequest $request
      * @return \Illuminate\Http\Response
      */
@@ -154,7 +158,7 @@ class UsuarioController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  StoreUpdateUsuarioRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -176,7 +180,7 @@ class UsuarioController extends Controller
 
     /**
      * Atualiza o Status do Usuário
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

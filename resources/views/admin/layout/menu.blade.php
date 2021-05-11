@@ -1,17 +1,17 @@
 {{-- Dashboard --}}
 <li class="nav-item">
-    <a href="{{ action('Admin\DashboardController@index') }}" class="nav-link active">
+    <a href="{{ action('Admin\DashboardController@index') }}" class="nav-link {{ (Request::is('dashboard*') ? 'active' : '') }}">
       <i class="nav-icon fas fa-file-alt"></i>
       <p>
         Dashboard
       </p>
     </a>
   </li>
-  
-  
-  
+
+
+
   <li class="nav-item">
-    <a href="{{ action('Admin\ClienteController@index') }}" class="nav-link">
+    <a href="{{ action('Admin\ClienteController@index') }}" class="nav-link {{ (Request::is('cliente*') ? 'active' : '') }}">
       <i class="fas fa-car nav-icon"></i>
       <p>
         Concessionária
@@ -19,7 +19,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a href="{{ action('Admin\UsuarioController@index') }}" class="nav-link">
+    <a href="{{ action('Admin\UsuarioController@index') }}" class="nav-link {{ (Request::is('usuario*') ? 'active' : '') }}">
       <i class="fas fa-users nav-icon"></i>
       <p>
         Usuário
@@ -27,7 +27,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a href="{{ action('Admin\ServicoController@index') }}" class="nav-link">
+    <a href="{{ action('Admin\ServicoController@index') }}" class="nav-link {{ (Request::is('servico*') ? 'active' : '') }}">
       <i class="fas fa-wrench nav-icon"></i>
       <p>
         Serviços
@@ -35,14 +35,23 @@
     </a>
   </li>
   <li class="nav-item">
-    <a href="{{ action('Admin\ProdutoController@index') }}" class="nav-link">
+    <a href="{{ action('Admin\ProdutoController@index') }}" class="nav-link {{ (Request::is('produto*') ? 'active' : '') }}">
       <i class="fas fa-box nav-icon"></i>
       <p>
         Produto
       </p>
     </a>
   </li>
-  
+
+  <li class="nav-item">
+    <a href="{{ action('Admin\RelatorioController@index') }}" class="nav-link {{ (Request::is('relatorio*') ? 'active' : '') }}">
+      <i class="fas fa-print"></i>
+      <p>
+        Relatórios
+      </p>
+    </a>
+  </li>
+
   {{-- Configuracao --}}
   <li class="nav-item has-treeview">
     <a href="" class="nav-link">
@@ -68,7 +77,7 @@
       <p>
         Sair
       </p>
-    </a>          
+    </a>
   </li>
 
 

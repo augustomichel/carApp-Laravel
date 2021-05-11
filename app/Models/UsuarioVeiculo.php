@@ -20,7 +20,7 @@ class UsuarioVeiculo extends Model
 
     /**
      * Realizando validacao dos campos recebidos API Rest Condutor
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param Json $params
      */
     public function validacaoCampos($params)

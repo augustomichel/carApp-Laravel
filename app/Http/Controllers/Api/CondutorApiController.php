@@ -27,7 +27,7 @@ class CondutorApiController extends Controller
 
     /**
      * Exibir uma lista do recurso. (GET)
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -38,7 +38,7 @@ class CondutorApiController extends Controller
 
     /**
      * Armazene um recurso recém-criado no armazenamento. (POST)
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      * @example 
@@ -150,7 +150,7 @@ class CondutorApiController extends Controller
 
     /**
      * Retornando as marcas de veiculos
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      * @return Json
      */
@@ -165,7 +165,7 @@ class CondutorApiController extends Controller
 
     /**
      * Retornando os modelos de uma Marca
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      * @return Json
      */
@@ -180,7 +180,7 @@ class CondutorApiController extends Controller
 
     /**
      * Setando atributos referenciados na table pedidos
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param Json  $params
      */
     public function validandoAtributosReferences(&$params)
@@ -192,7 +192,7 @@ class CondutorApiController extends Controller
 
     /**
      * Validando dados do Veiculo
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param Json $veiculo
      */
     public function validandoVeiculo($veiculo)

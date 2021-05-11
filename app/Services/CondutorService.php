@@ -9,7 +9,7 @@ class CondutorService
 {
     /**
      * Confirmacao de Condutor de Veiculo
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      */
     public function confirmacaoCondutor($usuario)
     {

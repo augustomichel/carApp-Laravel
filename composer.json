@@ -1,7 +1,10 @@
 {
-    "name": "CarApp",
+    "name": "ssandross/carapp",
     "description": "CarApp.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {

@@ -1,6 +1,6 @@
 /**
  * Classe Gerais de Formatacao
- * @author Augusto Michel <augustomichel@gmail.com>
+ * @author Fernando Costa <fernando@primetec.tec.br>
  */
 class Util {
 

@@ -18,7 +18,7 @@ class Repository
 
     /**
      * Setando Instancia PDO
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param PDO $pdo
      */
     public function setInstance(PDO $pdo)
@@ -28,7 +28,7 @@ class Repository
 
     /**
      * Retornando Instancia PDO
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return PDO
      */
     public function getInstance()

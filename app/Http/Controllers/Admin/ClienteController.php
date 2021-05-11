@@ -28,7 +28,7 @@ class ClienteController extends Controller
 
     /**
      * Display a listing of the resource.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -82,7 +82,7 @@ class ClienteController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -99,7 +99,7 @@ class ClienteController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  StoreUpdateClienteRequest $request
      * @return \Illuminate\Http\Response
      */
@@ -128,7 +128,7 @@ class ClienteController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -153,7 +153,7 @@ class ClienteController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  StoreUpdateClienteRequest $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -174,7 +174,7 @@ class ClienteController extends Controller
 
     /**
      * Atualiza o Status do Produto
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -197,7 +197,7 @@ class ClienteController extends Controller
 
     /**
      * Tratando os dados antes da Renderização
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @params LengthAwarePaginator clientes
      */
     public function tratarDadosCliente($clientes)

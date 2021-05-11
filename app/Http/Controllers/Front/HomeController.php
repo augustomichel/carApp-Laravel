@@ -8,30 +8,42 @@ use App\Models\Marca;
 use App\Models\Modelo;
 use App\Models\Usuario;
 use App\Models\UsuarioVeiculo;
+use App\Models\UsuarioServico;
 use App\Services\CondutorService;
+
 
 class HomeController extends Controller
 {
     public function __construct(Request $request, Usuario $usuario, UsuarioVeiculo $usuarioVeiculo)
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
 
         $this->request = $request;
         $this->usuario = $usuario;
         $this->veiculo = $usuarioVeiculo;
+        
     }
 
     public function index()
     {
+        $nivelusuario          = $this->request->session()->get('nivel-user');
+        $UsuarioVeiculo        = UsuarioVeiculo::where('usv_usuario',session()->get('user-id'))->get();
+        if ($nivelusuario <> 6){
+            $UsuarioServico        = UsuarioServico::where('usu_codigo_executor',session()->get('user-id'))->get();
+        } else {
+            $UsuarioServico        = UsuarioServico::where('usuario_usu_codigo',session()->get('user-id'))->get();
+        }
         return View('front.home.index', [
-            'titulo'  => 'Dashboard',
-            'usuario' => 'Fernando'
+            'titulo'  => '',
+            'usuario' => session()->get('user-nome'),
+            'veiculoscadastrados' => $UsuarioVeiculo->count(),
+            'servicos'=> $UsuarioServico->count()
         ]);
     }
 
     /**
      * Montando formulario de inscricao de condutor
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      */
     public function condutor()
     {
@@ -39,7 +51,7 @@ class HomeController extends Controller
 
         return View('front.condutor.index', [
             'titulo'  => 'Contato',
-            'usuario' => 'Fernando',
+            'usuario' => session()->get('user-nome'),
             'marcas'  => $marcas,
             'error'   => null,
             'success' => null
@@ -48,7 +60,7 @@ class HomeController extends Controller
 
     /**
      * Gravando registro de novo condutor
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      */
     public function condutorStore(Request $request)
     {
@@ -99,7 +111,7 @@ class HomeController extends Controller
 
             return View('front.condutor.index', [
                 'titulo'  => 'Contato',
-                'usuario' => 'Fernando',
+                'usuario' => session()->get('user-nome'),
                 'marcas'  => $marcas,
                 'error'   => null,
                 'success' => true
@@ -107,7 +119,7 @@ class HomeController extends Controller
         } catch (\Exception $e) {
             return View('front.condutor.index', [
                 'titulo'  => 'Contato',
-                'usuario' => 'Fernando',
+                'usuario' => session()->get('user-nome'),
                 'marcas'  => $marcas,
                 'error'   => $e->getMessage(),
                 'success' => false
@@ -119,21 +131,13 @@ class HomeController extends Controller
     {
         return View('front.contato.index', [
             'titulo'  => 'Contato',
-            'usuario' => 'Fernando'
-        ]);
-    }
-
-    public function manager()
-    {
-        return View('front.login.index', [
-            'titulo'  => 'Dashboard',
-            'usuario' => 'Fernando'
+            'usuario' => session()->get('user-nome')
         ]);
     }
 
     /**
      * Retornando Modelos de uma Marca
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return Json
      */
     public function modelo(Request $request, $id)
@@ -141,17 +145,9 @@ class HomeController extends Controller
         return Modelo::where(['mod_marca' => $id])->get();
     }
 
-    public function forgot()
-    {
-        return View('front.login.recuperar-senha', [
-            'titulo'  => 'Dashboard',
-            'usuario' => 'Fernando'
-        ]);
-    }
-
     /**
      * Validação dos Campos de Cadastro de novo condutor
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param Request $request
      */
     public function validacaoCampos(Request $request)
@@ -192,7 +188,7 @@ class HomeController extends Controller
 
     /**
      * Validando campo de email do novo usuario
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param String  $email
      */
     public function validandoAtributosReferences($email)
@@ -204,7 +200,7 @@ class HomeController extends Controller
 
     /**
      * Validando dados do Veiculo
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param integer $marca
      * @param integer $modelo
      * @param string $placa

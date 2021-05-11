@@ -19,7 +19,7 @@ class AuthController extends Controller
 
     /**
      * Autenticação do Usuário
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      */
     public function auth(Request $request)
@@ -39,7 +39,12 @@ class AuthController extends Controller
             $request->session()->put('cliente-id', $usuario->usu_cliente);
 
             //refireciona para o controller dashboard
-            return redirect('/dashboard');
+            if ($usuario->usu_nivel <> Usuario::ROOT) {
+                return redirect('/home');
+            } else {
+                return redirect('/dashboard');
+            }
+            
         } else {
             //redireciona para o login com error
             return redirect('/manager?error=1');
@@ -48,7 +53,7 @@ class AuthController extends Controller
 
     /**
      * Recuperação de Senha do Usuário
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      */
     public function forgot(Request $request)
@@ -86,7 +91,7 @@ class AuthController extends Controller
 
     /**
      * Logout de Sistema
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @param  \Illuminate\Http\Request  $request
      */
     public function logout(Request $request)

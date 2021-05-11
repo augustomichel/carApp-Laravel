@@ -9,7 +9,7 @@ class ClienteRepository extends Repository
 {
     /**
      * Retornando todas as Concessionarias Matriz
-     * @author Augusto Michel <augustomichel@gmail.com>
+     * @author Fernando Costa <fernando@primetec.tec.br>
      * @return array
      */
     public function getConcessionariasMatriz()

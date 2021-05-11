@@ -1,7 +1,7 @@
 @if($errors->any())
 <br>
 <div class="container">
-    <div class="col-md-12">
+    <div class="col-md-5">
         <div class="alert alert-danger" role="alert">
             <ul>
                 @foreach($errors->all() as $error)

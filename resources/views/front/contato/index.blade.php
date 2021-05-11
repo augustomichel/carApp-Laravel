@@ -5,10 +5,10 @@
 <div class="content">
   <div class="container-fluid">
       <div class="row">
-          ola fernando
+          {{ $usuario }}
        
-        </div>
-      </div>    
-  </div>
+      </div>
+  </div>    
+</div>
 
 @endsection
